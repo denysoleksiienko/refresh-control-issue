@@ -18,7 +18,7 @@ const UsersScreen = () => {
     queryFn: fetchUsers,
   });
 
-  console.log(isRefetching);
+  console.log('isRefetching', isRefetching); // TRUE on mount screen
 
   const renderUsers = ({item}) => {
     return <Text>{item.name}</Text>;
@@ -27,6 +27,7 @@ const UsersScreen = () => {
   return (
     <SafeAreaView style={{flex: 1}} edges={['bottom']}>
       <FlatList
+        contentContainerStyle={{gap: 12, paddingHorizontal: 16}}
         data={data}
         renderItem={renderUsers}
         refreshControl={
